@@ -58,6 +58,8 @@ public class ShiroConfig {
         filterRuleMap.put("/**", "jwt");
         // 访问401和404页面不通过我们的Filter
         filterRuleMap.put("/401", "anon");
+        //登录不需要拦截，直接匿名访问
+        filterRuleMap.put("/login", "anon");
         factoryBean.setFilterChainDefinitionMap(filterRuleMap);
         return factoryBean;
     }
